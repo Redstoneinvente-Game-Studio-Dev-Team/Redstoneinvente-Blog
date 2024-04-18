@@ -1,0 +1,381 @@
+:root{
+    --primary : #FFFFFFAA;
+    --secondary : #6A7B8C ;
+
+    --secondary-mic-1 : #6A7B8C ;
+    --secondary-mic-2 : #ab2727 ;
+}
+
+.body-container {
+    display: flex;
+}
+
+.allUsersContainer {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+
+    margin-right: 20px;
+}
+
+.userInfoContainer {
+    margin-bottom: 10px;
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    align-content: center;
+
+    background-color: beige;
+    border: solid 0;
+    border-radius: 20px;
+
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: all ease-in 250ms;
+}
+
+.userDetailsContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* z-index: 1; */
+
+    display: flex;
+    
+    flex-direction: column; /* Arrange elements vertically */
+    justify-content: flex-end;  /* Push elements to the bottom */
+    align-items: center; 
+
+    border: solid 0;
+    border-radius: 20px;
+
+    background-image: linear-gradient(transparent, var(--primary));
+
+    color: inherit;
+}
+
+.userDetailsContainer h1 {
+    font-size: large;
+
+    color: inherit;
+}
+
+.userInfoContainer img {
+    /* position: absolute; */
+    background-size: cover;
+    object-fit: cover;           
+
+    background-position: center;     
+    background-repeat: no-repeat;    
+
+    height: inherit;  
+    width: inherit;  
+
+    border-radius: inherit;
+
+    filter: grayscale(0.9) brightness(50%);
+
+    transition: all ease-in 250ms;
+}
+
+.userInfoContainer:hover {
+    margin-bottom: 10px;
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    align-content: center;
+
+    background-color: beige;
+    border: solid 0;
+    border-radius: 20px;
+
+    color: black;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: all ease-in 250ms;
+}
+
+.userInfoContainer:hover img {
+    /* position: absolute; */
+    background-size: cover;
+    object-fit: cover;           
+
+    background-position:center;     
+    background-repeat: no-repeat;    
+
+    height: 99%;  
+    width: 99%;
+    
+    filter: grayscale(0) brightness(100%);
+
+    transition: all ease-in 250ms;
+}
+
+.otherInfoContainer {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    color: inherit;
+}
+
+.otherInfoContainer h2 {
+    font-size: large;
+
+    color: inherit;
+}
+
+.otherInfoContainer h3 {
+    font-size: large;
+
+    color: inherit;
+}
+
+.videoArea {
+    flex-grow: 1;
+    height: 99vh;
+    margin-right: 1px;
+
+    display: flex;
+    justify-content: center;/* Center horizontally */
+    align-items: center; 
+
+    transition: all 0.2s ease-in-out; 
+}
+
+.videoView {
+    display: flex;         /* Enable Flexbox for side-by-side layout */
+    flex-direction: row;   /* Change to arrange items in a row */
+    width: 100%; 
+    height: auto;
+
+    top: 50%;
+
+    transition: all 0.2s ease-in-out; 
+}
+
+.videoView video {
+    flex-grow: 1;         /* Distribute space equally between videos */
+    width: 50%;           /* Can adjust if needed, but they will add up to 100% of the container */
+    height: auto;         /* Maintain aspect ratio */
+    background-color: black;
+
+    margin: 5px;
+
+    transition: all 0.2s ease-in-out; 
+}
+
+.call-button-overlay {
+    position: absolute;
+    bottom: 20%;   
+    left: 51.9%;     /* Offset to counter the leftmost video's margin */
+    width: auto; /* Subtract 20px to account for total margin */
+    display: flex; 
+    justify-content: center; 
+    gap: 10px;  
+}
+  
+  .call-button-overlay button {
+    /* Style your buttons as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 100%;
+
+    width: 56px;
+    height: 56px;
+
+    transition: all ease-in 250ms;
+  }
+
+  .call-button-overlay button span {
+    font-size: 24px; /* Adjust as needed */ 
+  }
+
+  .call-button-overlay:hover button {
+    /* background-color:gray !important; */
+    opacity: 0.3;
+    /* border-radius: 20%; */
+
+    transition: all ease-in 250ms;
+  }
+
+  .call-button-overlay button:hover {
+    /* background-color:green !important; */
+    opacity: 1;
+    /* border-radius: 100%; */
+
+    transition: all ease-in 250ms;
+  }
+
+  .chat-toggle {
+    background-color:darkblue !important;
+  }
+
+  .video-toggle {
+    background-color: blue !important;
+  }
+
+  .mute-toggle {
+    background-color: green !important;
+  }
+
+  .hang-up {
+    background-color: red !important;
+  }
+  
+  .disabled-overlay {
+    position: absolute;
+
+    display: flex;          /* Center the icon */
+    justify-content: center;
+    align-items: center;  
+    
+    background-color: white; 
+    opacity: 0;             /* Hide overlay initially */
+    transition: opacity 0.2s ease-in-out; 
+
+    margin: 5px;
+}
+
+.disabled-overlay-mic {
+  position: absolute;
+
+  display: flex;          /* Center the icon */
+  justify-content: center;
+  align-items: center;  
+  
+  background-color: white; 
+  /* opacity: 0.3;       */
+  transition: opacity 0.2s ease-in-out; 
+
+  border-radius: 50%;
+
+  margin: 1%;
+}
+
+.disabled-overlay-icons {
+  position: absolute;
+
+  display: flex;          /* Center the icon */
+  justify-content: center;
+  align-items: center;  
+  
+  background-color: black;
+  opacity: 0.8;
+
+  backdrop-filter: blur(50%); 
+
+  transition: opacity 0.2s ease-in-out; 
+
+  border-radius: 50%;
+
+  width: 30px;
+  height: 30px;
+
+  margin: 2%;
+  /* padding-left: 1%; */
+}
+
+.disabled-overlay .material-symbols-outlined { 
+  font-size: 600%; /* Set your desired size */
+  color: var(--secondary);          /* Ensure contrast */
+}
+
+.disabled-overlay-mic .material-symbols-outlined { 
+  font-size: auto; /* Set your desired size */
+  color: var(--secondary-mic-1);          /* Ensure contrast */
+  margin: 5px;
+  animation: blinkAnimation 3s linear infinite;
+
+}
+
+.disabled-overlay-icons .material-symbols-outlined { 
+  font-size: 20px; /* Set your desired size */
+  color: white !important;          /* Ensure contrast */
+  margin: 2px;
+}
+
+.blurred-content {
+  position: absolute;
+
+  width: inherit;
+  height: inherit;
+
+  left: inherit;
+  right: inherit;
+
+  filter: blur(50%);
+}
+
+@keyframes blinkAnimation {
+  0% { color: var(--secondary-mic-1); ; }
+  50% { color: var(--secondary-mic-2); ; }
+  100% { color: var(--secondary-mic-1); ; }
+}
+
+.card-container {
+  opacity: 0;
+  transition: all 0.2s ease-in-out; /* Smooth transition */
+
+  position: absolute;
+  top: 20px; 
+  left: -200px; /* Initially hidden outside the video */
+  width: 200px;
+  background-color: #fff; 
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+
+}
+
+.card-container.active {
+  opacity: 1 !important;
+  transition: all 0.2s ease-in-out; /* Smooth transition */
+}
+
+.card {
+  padding-left: 15%;
+  padding-top: 4%;
+}
+
+lottie-container { /* Assuming your Lottie animation is wrapped in a div like this */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  z-index: -1; /* Place it behind other content */
+}
+
+lottie-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  z-index: -1; /* Place it behind other content */
+
+  opacity: 0.4;
+
+  width: 100%;
+  height: 100%;
+}
